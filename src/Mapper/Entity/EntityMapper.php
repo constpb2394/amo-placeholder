@@ -32,7 +32,7 @@ abstract class EntityMapper implements EntityMapperInterface
 
         $cfValues = $model->getCustomFieldsValues();
         if (!$cfValues) {
-            $this->logger->warning('Не найдены кастомные поля в сущности {entity} c id={id}', [
+            $this->logger->warning('Custom fields were not found in the entity. {entity} with id={id}', [
                 'entity' => get_class($entity),
                 'id' => $model->getId(),
             ]);
@@ -51,7 +51,7 @@ abstract class EntityMapper implements EntityMapperInterface
 
             $field = $this->typeFactory->create($fieldType, $fieldCode);
             if (!$field) {
-                $this->logger->warning('Не найден тип поля {field_type} для поля {field_code}', [
+                $this->logger->warning('Field type not found {field_type} for the field {field_code}', [
                     'field_type' => $fieldType,
                     'field_code' => $fieldCode,
                 ]);
@@ -68,7 +68,7 @@ abstract class EntityMapper implements EntityMapperInterface
             $entity->addCustomFields($customFields);
         }
 
-        $this->logger->debug('Создана сущность', [
+        $this->logger->debug('Entity created', [
             'entity_class' => get_class($entity),
             'entity_name' => $entity->getName(),
             'custom_fields' => array_map(function (Value $customField) {

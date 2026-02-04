@@ -19,7 +19,7 @@ class EmailHandler extends AbstractFieldHandler
         if (!$code) {
             $errorMessage = sprintf(
                 self::ERROR_MESSAGE_TEMPLATE,
-                'почты',
+                'of mail',
                 $enumCode,
                 static::class,
             );

@@ -20,7 +20,7 @@ class PlaceholderFactory implements PlaceholderFactoryInterface
         $placeholder = match ($entityType) {
             EntityTypeEnum::LEAD => new LeadEntityPlaceholder(),
             EntityTypeEnum::CONTACT => new ContactEntityPlaceholder(),
-            default => throw new \InvalidArgumentException('Не поддерживаемый тип сущности .' . $entityType->value), // @phpstan-ignore-line
+            default => throw new \InvalidArgumentException('Unsupported entity type.' . $entityType->value),
         };
 
         return $placeholder;
@@ -34,7 +34,7 @@ class PlaceholderFactory implements PlaceholderFactoryInterface
         $placeholder = match ($entityType) {
             EntityTypeEnum::LEAD => new LeadNamePlaceholder(),
             EntityTypeEnum::CONTACT => new ContactNamePlaceholder(),
-            default => throw new \InvalidArgumentException('Не поддерживаемый тип сущности .' . $entityType->value), // @phpstan-ignore-line
+            default => throw new \InvalidArgumentException('Unsupported entity type.' . $entityType->value),
         };
 
         return $placeholder;

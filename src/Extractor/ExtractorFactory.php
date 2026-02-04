@@ -12,7 +12,7 @@ class ExtractorFactory
         $extractor = match ($field->getType()) {
             FieldTypeEnum::PHONE, FieldTypeEnum::EMAIL => new SeparateValueExtractor(),
             FieldTypeEnum::CUSTOM => new AgregateValueExtractor(),
-            default => throw new \InvalidArgumentException('Не поддерживаемый тип поля ' . $field->getType()->value), // @phpstan-ignore-line
+            default => throw new \InvalidArgumentException('An unsupported field type. ' . $field->getType()->value),
         };
 
         return $extractor;

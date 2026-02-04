@@ -6,7 +6,7 @@ use AmoCRM\Models\BaseApiModel;
 use Constpb\AmoPlaceholder\Entity\EntityInterface;
 
 /**
- * Интерфейс отвечающий за преобразование сущности Амо в наше внутренне представление.
+ * The interface responsible for converting the Amo entity into our internal representation.
  */
 interface EntityMapperInterface
 {

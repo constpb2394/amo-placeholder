@@ -23,7 +23,7 @@ class CommonReplacer implements ReplacerInterface
      */
     public function getReplacements(EntityInterface $entity, array $placeholders): array
     {
-        $this->logger->debug('Начата процедура получения значений для плейсхолдеров', [
+        $this->logger->debug('The procedure for obtaining values for placeholders has been started', [
             'entity' => $entity->getType()->value,
             'custom_fields' => array_map(static function (Value $customField) {
                 return [
@@ -76,7 +76,7 @@ class CommonReplacer implements ReplacerInterface
             }
         }
 
-        $this->logger->debug('Завершена процедура получения значений для плейсхолдеров', [
+        $this->logger->debug('The procedure for obtaining values for placeholders has been completed', [
             'entity' => $entity->getType()->value,
             'replacements' => $replacements,
         ]);

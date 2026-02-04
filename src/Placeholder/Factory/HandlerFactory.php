@@ -23,7 +23,7 @@ class HandlerFactory implements HandlerFactoryInterface
             FieldTypeEnum::PHONE => new PhoneHandler($this->logger),
             FieldTypeEnum::EMAIL => new EmailHandler($this->logger),
             FieldTypeEnum::CUSTOM => new CustomHandler($this->logger),
-            default => throw new \InvalidArgumentException('Не найден обработчик для поля типа ' . $field->getType()->value), // @phpstan-ignore-line
+            default => throw new \InvalidArgumentException('The handler for the type field was not found. ' . $field->getType()->value),
         };
 
         return $handler;

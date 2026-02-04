@@ -20,7 +20,7 @@ class CommonPlaceholderBuilder implements PlaceholderBuilderInterface
 
     public function buildPlaceholderList(EntityTypeEnum $entityType, array $customFields): array
     {
-        $this->logger->debug('Начато построение списка плейсхолдеров для сущности {entity}', [
+        $this->logger->debug('Building a list of placeholders for the entity has started {entity}', [
             'entity' => $entityType->value,
             'custom_fields' => array_map(static function (CustomFieldBase $customField) {
                 return [
@@ -62,7 +62,7 @@ class CommonPlaceholderBuilder implements PlaceholderBuilderInterface
             }
         }
 
-        $this->logger->debug('Завершено построение списка плейсхолдеров для сущности {entity}', [
+        $this->logger->debug('The list of placeholders for the entity has been completed {entity}', [
             'entity' => $entityType->value,
             'placeholders' => $placeholders,
         ]);

@@ -2,6 +2,7 @@
 
 namespace Constpb\AmoPlaceholder\Placeholder\Entity\Contact;
 
+use Constpb\AmoPlaceholder\Locale\LocaleService;
 use Constpb\AmoPlaceholder\Placeholder\Entity\EntityNamePlaceholder;
 
 class ContactNamePlaceholder extends EntityNamePlaceholder
@@ -10,6 +11,6 @@ class ContactNamePlaceholder extends EntityNamePlaceholder
     {
         $naming = parent::getValue($modificator);
 
-        return $naming . 'контакта';
+        return $naming . LocaleService::trans('contact-name-placeholder');
     }
 }

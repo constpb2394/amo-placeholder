@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 
 abstract class AbstractFieldHandler implements FieldHandlerInterface
 {
-    protected const ERROR_MESSAGE_TEMPLATE = 'Неподдерживаемый enum_code поля в обработчике {%s}: поле - {%s}, класс - {%s}';
+    protected const ERROR_MESSAGE_TEMPLATE = 'Unsupported field enum_code in the {%s} handler: field - {%s}, class - {%s}';
 
     protected readonly LoggerInterface $logger;
 
@@ -37,9 +37,9 @@ abstract class AbstractFieldHandler implements FieldHandlerInterface
     {
         if (!$this->validateType($field)) {
             $errorMessage = sprintf(
-                'Неверный тип поля в обработчике телефона: поле - {%s}, тип - {%s}, класс - {%s}',
-                $field->getName(),
+                self::ERROR_MESSAGE_TEMPLATE,
                 $field->getType()->value,
+                $field->getName(),
                 static::class,
             );
 
@@ -53,7 +53,7 @@ abstract class AbstractFieldHandler implements FieldHandlerInterface
         } elseif ($field instanceof Value) {
             return $this->handleValueField($field, $placeholder);
         } else {
-            throw new \InvalidArgumentException('Неверный класс кастомного поля: ' . get_class($field));
+            throw new \InvalidArgumentException('Invalid custom field class: ' . get_class($field));
         }
     }
 

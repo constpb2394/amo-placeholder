@@ -21,7 +21,7 @@ class PhoneHandler extends AbstractFieldHandler
         if (!$code) {
             $errorMessage = sprintf(
                 self::ERROR_MESSAGE_TEMPLATE,
-                'телефона',
+                'of phone',
                 $enumCode,
                 static::class,
             );

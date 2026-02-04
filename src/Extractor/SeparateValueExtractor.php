@@ -8,7 +8,7 @@ use Constpb\AmoPlaceholder\Entity\CustomFields\Value;
 use Constpb\AmoPlaceholder\Extractor\Trait\ExtractorTrait;
 
 /**
- * Вытягивает каждое значение отдельно.
+ * Pulls each value separately.
  */
 class SeparateValueExtractor extends AbstractFieldValueExtractor
 {

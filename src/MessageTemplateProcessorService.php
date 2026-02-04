@@ -69,7 +69,7 @@ class MessageTemplateProcessorService
         };
 
         if (!$entityType) {
-            $this->logger->debug('Не поддерживаемый тип сущности , подставляем пустые значения', [
+            $this->logger->debug('Unsupported entity type, replacing with empty values', [
                 'entity_id' => $amocrmEntity->getId(),
                 'class_name' => get_class($amocrmEntity),
             ]);
@@ -77,7 +77,7 @@ class MessageTemplateProcessorService
             return $this->replaceWithEmptyValues($template);
         }
 
-        $this->logger->debug('Заменяем переменные в сообщении из amoCRM', [
+        $this->logger->debug('Replace variables in the message from amoCRM', [
             'entity_id' => $amocrmEntity->getId(),
             'entity_type' => $entityType->value,
             'template' => $template,
@@ -94,7 +94,7 @@ class MessageTemplateProcessorService
         preg_match_all(self::PLACEHOLDER_PATTERN, $template, $matches);
         $allPlaceholders = array_unique($matches[0]);
 
-        $this->logger->debug('Нашли данные для замены переменных', [
+        $this->logger->debug('Found data to replace variables', [
             'entity_id' => $amocrmEntity->getId(),
             'template' => $template,
             'replacements' => $replacements,
@@ -119,7 +119,7 @@ class MessageTemplateProcessorService
 
         $result = $result ?? '';
 
-        $this->logger->info('Закончили заменять переменные', [
+        $this->logger->info('Have you finished replacing variables', [
             'entity_id' => $amocrmEntity->getId(),
             'entity_type' => $entityType->value,
             'template' => $template,

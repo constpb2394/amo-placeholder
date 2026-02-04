@@ -23,7 +23,7 @@ class CommonEntityMapperFactory implements EntityMapperFactoryInterface
         $mapper = match ($entityType) {
             EntityTypeEnum::LEAD => new LeadMapper($this->typeFactory, $this->logger),
             EntityTypeEnum::CONTACT => new ContactMapper($this->typeFactory,$this->logger),
-            default => throw new \InvalidArgumentException('Неподдерживаемый тип сущности для создания маппера'), // @phpstan-ignore-line
+            default => throw new \InvalidArgumentException('Unsupported entity type for creating a mapper'),
         };
 
         return $mapper;

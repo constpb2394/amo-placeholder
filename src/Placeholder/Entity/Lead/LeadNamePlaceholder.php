@@ -2,6 +2,7 @@
 
 namespace Constpb\AmoPlaceholder\Placeholder\Entity\Lead;
 
+use Constpb\AmoPlaceholder\Locale\LocaleService;
 use Constpb\AmoPlaceholder\Placeholder\Entity\EntityNamePlaceholder;
 
 class LeadNamePlaceholder extends EntityNamePlaceholder
@@ -10,6 +11,6 @@ class LeadNamePlaceholder extends EntityNamePlaceholder
     {
         $naming = parent::getValue($modificator);
 
-        return $naming . 'сделки';
+        return $naming . LocaleService::trans('lead-name-placeholder');
     }
 }

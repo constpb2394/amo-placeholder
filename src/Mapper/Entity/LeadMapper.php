@@ -20,7 +20,7 @@ class LeadMapper extends EntityMapper
     protected function checkApiModel(BaseApiModel $model): void
     {
         if (!($model instanceof LeadModel)) {
-            throw new \InvalidArgumentException(sprintf('Не поддерживаемая модель амо %s {class=%s}', get_class($model), static::class));
+            throw new \InvalidArgumentException(sprintf('Unsupported Amo model %s {class=%s}', get_class($model), static::class));
         }
     }
 }

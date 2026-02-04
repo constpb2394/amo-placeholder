@@ -71,7 +71,7 @@ trait ExtractorTrait
                         $value = $dateTime->format('d.m.Y');
                     } catch (\Throwable $e) {
                         if (isset($this->logger)) {
-                            $this->logger->warning('Не получилось в переменной преобразовать дату', [
+                            $this->logger->warning('Couldn\'t convert the date in the variable', [
                                 'value' => $value,
                                 'exception' => $e->getMessage(),
                             ]);
