@@ -2,6 +2,7 @@
     "name": "constpb/amo-placeholder",
     "description": "The library is designed for working with placeholders of custom fields of AmoCRM entity models, needed to make dynamic message text",
     "keywords": ["amo", "placeholder", "text"],
+    "homepage": "https://github.com/constpb/amo-placeholder",
     "type": "library",
     "license": "MIT",
     "version": "1.0.0",
