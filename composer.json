@@ -1,0 +1,36 @@
+{
+    "name": "constpb/amo-placeholder",
+    "description": "The library is designed for working with placeholders of custom fields of AmoCRM entity models, needed to make dynamic message text",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Constpb\\AmoPlaceholder\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "constpb",
+            "email": "bronshteynkostya@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.1",
+        "ext-mbstring": "*",
+        "amocrm/amocrm-api-library": "1.0.*",
+        "psr/log": "^1|^2|^3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.1"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Constpb\\AmoPlaceholder\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "qa:phpunit": "./vendor/bin/phpunit --configuration ./phpunit.xml --colors=auto"
+    }
+}
